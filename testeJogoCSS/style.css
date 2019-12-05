@@ -1,0 +1,439 @@
+/* line 1, style.scss */
+body {
+  background-color: #333333;
+}
+
+/* line 5, style.scss */
+.anchor, .stage,
+.intro, .stage .controllers[level="2"], .stage .controllers[level="3"], #center-to-top:checked ~ .stage [level="1"], #top-to-center:checked ~ .stage .top[level="2"], #center-to-right:checked ~ .stage [level="1"], #right-to-center:checked ~ .stage .right[level="2"], #right-to-top:checked ~ .stage [level="1"],
+#right-to-top:checked ~ .stage [level="2"],
+#top-to-right:checked ~ .stage [level="1"],
+#top-to-right:checked ~ .stage [level="2"], #right-to-bottom:checked ~ .stage [level="1"],
+#right-to-bottom:checked ~ .stage [level="2"],
+#bottom-to-right:checked ~ .stage [level="1"],
+#bottom-to-right:checked ~ .stage [level="2"], #right-top-to-top-center:checked ~ .stage [level="1"],
+#right-top-to-top-center:checked ~ .stage [level="3"], #right-bottom-to-bottom-center:checked ~ .stage [level="1"],
+#right-bottom-to-bottom-center:checked ~ .stage [level="3"], #right-top-to-right-center:checked ~ .stage [level="1"],
+#right-top-to-right-center:checked ~ .stage [level="3"],
+#right-bottom-to-right-center:checked ~ .stage [level="1"],
+#right-bottom-to-right-center:checked ~ .stage [level="3"], #center-to-bottom:checked ~ .stage [level="1"], #bottom-to-center:checked ~ .stage .bottom[level="2"], #center-to-left:checked ~ .stage [level="1"], #left-to-center:checked ~ .stage .left[level="2"], #left-to-top:checked ~ .stage [level="1"],
+#left-to-top:checked ~ .stage [level="2"],
+#top-to-left:checked ~ .stage [level="1"],
+#top-to-left:checked ~ .stage [level="2"], #left-to-bottom:checked ~ .stage [level="1"],
+#left-to-bottom:checked ~ .stage [level="2"],
+#bottom-to-left:checked ~ .stage [level="1"],
+#bottom-to-left:checked ~ .stage [level="2"], #left-top-to-top-center:checked ~ .stage [level="1"],
+#left-top-to-top-center:checked ~ .stage [level="3"], #left-bottom-to-bottom-center:checked ~ .stage [level="1"],
+#left-bottom-to-bottom-center:checked ~ .stage [level="3"], #left-top-to-left-center:checked ~ .stage [level="1"],
+#left-top-to-left-center:checked ~ .stage [level="3"],
+#left-bottom-to-left-center:checked ~ .stage [level="1"],
+#left-bottom-to-left-center:checked ~ .stage [level="3"] {
+  display: none;
+}
+
+/* line 9, style.scss */
+#center-to-top:checked ~ .stage .top[level="2"], #top-to-center:checked ~ .stage [level="1"], #center-to-right:checked ~ .stage .right[level="2"], #right-to-center:checked ~ .stage [level="1"], #right-to-top:checked ~ .stage .diagonal-right-top[level="3"],
+#top-to-right:checked ~ .stage .diagonal-right-top[level="3"], #right-to-bottom:checked ~ .stage .diagonal-right-bottom[level="3"],
+#bottom-to-right:checked ~ .stage .diagonal-right-bottom[level="3"], #right-top-to-top-center:checked ~ .stage .top[level="2"], #right-bottom-to-bottom-center:checked ~ .stage .bottom[level="2"], #right-top-to-right-center:checked ~ .stage .right[level="2"],
+#right-bottom-to-right-center:checked ~ .stage .right[level="2"], #center-to-bottom:checked ~ .stage .bottom[level="2"], #bottom-to-center:checked ~ .stage [level="1"], #center-to-left:checked ~ .stage .left[level="2"], #left-to-center:checked ~ .stage [level="1"], #left-to-top:checked ~ .stage .diagonal-left-top[level="3"],
+#top-to-left:checked ~ .stage .diagonal-left-top[level="3"], #left-to-bottom:checked ~ .stage .diagonal-left-bottom[level="3"],
+#bottom-to-left:checked ~ .stage .diagonal-left-bottom[level="3"], #left-top-to-top-center:checked ~ .stage .top[level="2"], #left-bottom-to-bottom-center:checked ~ .stage .bottom[level="2"], #left-top-to-left-center:checked ~ .stage .left[level="2"],
+#left-bottom-to-left-center:checked ~ .stage .left[level="2"] {
+  display: block;
+}
+
+/* line 15, style.scss */
+#anchor-intro:checked ~ .intro, #anchor-stage:checked ~ .stage {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  top: 0;
+  width: 100%;
+}
+
+/* line 23, style.scss */
+.wrapper, .stage .control.-top, .stage .control.-bottom {
+  margin: auto;
+}
+
+/* line 27, style.scss */
+.wrapper {
+  border: 1px solid #FFFFFF;
+  bottom: 0;
+  height: 600px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 600px;
+}
+
+/* line 42, style.scss */
+.intro .ballon {
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  display: none;
+  padding: 20px;
+  position: relative;
+  width: 200px;
+}
+/* line 49, style.scss */
+.intro .ballon .text {
+  color: #333333;
+}
+/* line 52, style.scss */
+.intro .ballon label {
+  background-color: #BA0000;
+  border-radius: 50%;
+  bottom: -15px;
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 8px;
+  position: absolute;
+  right: -15px;
+}
+/* line 63, style.scss */
+.intro .ballon.-end label {
+  background-color: green;
+}
+
+/* line 75, style.scss */
+.character {
+  background: url(img/character-bottom.png) left top no-repeat;
+  height: 74px;
+  width: 74px;
+}
+
+/* line 96, style.scss */
+.stage {
+  background: url(img/scenery.jpg) center center;
+  position: relative;
+  transition: all 1.2s;
+}
+/* line 100, style.scss */
+.stage .control {
+  color: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  width: 20px;
+}
+/* line 109, style.scss */
+.stage .control.-top {
+  left: 0;
+  right: 0;
+  top: 20px;
+}
+/* line 115, style.scss */
+.stage .control.-right {
+  right: 20px;
+}
+/* line 118, style.scss */
+.stage .control.-bottom {
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}
+/* line 124, style.scss */
+.stage .control.-left {
+  left: 20px;
+}
+/* line 129, style.scss */
+.stage .controllers .control {
+  background-color: red;
+}
+
+/* line 142, style.scss */
+:checked + .ballon {
+  display: block;
+}
+
+@keyframes walk-1 {
+  0% {
+    background-position-x: 0;
+  }
+  99% {
+    background-position-x: -592px;
+  }
+}
+@keyframes walk-2 {
+  0% {
+    background-position-x: 0;
+  }
+  99% {
+    background-position-x: -592px;
+  }
+}
+@keyframes walk-3 {
+  0% {
+    background-position-x: 0;
+  }
+  99% {
+    background-position-x: -592px;
+  }
+}
+@keyframes walk-4 {
+  0% {
+    background-position-x: 0;
+  }
+  99% {
+    background-position-x: -592px;
+  }
+}
+@keyframes walk-5 {
+  0% {
+    background-position-x: 0;
+  }
+  99% {
+    background-position-x: -592px;
+  }
+}
+@keyframes walk-6 {
+  0% {
+    background-position-x: 0;
+  }
+  99% {
+    background-position-x: -592px;
+  }
+}
+@keyframes walk-7 {
+  0% {
+    background-position-x: 0;
+  }
+  99% {
+    background-position-x: -592px;
+  }
+}
+@keyframes walk-8 {
+  0% {
+    background-position-x: 0;
+  }
+  99% {
+    background-position-x: -592px;
+  }
+}
+/* line 161, style.scss */
+#center-to-top:checked ~ .stage {
+  background-position-y: top;
+}
+/* line 223, style.scss */
+#center-to-top:checked ~ .stage .character {
+  background-image: url(img/character-top.png);
+  animation: walk-1 0.8s steps(8) forwards;
+}
+
+/* line 161, style.scss */
+#top-to-center:checked ~ .stage {
+  background-position-y: center;
+}
+/* line 230, style.scss */
+#top-to-center:checked ~ .stage .character {
+  background-image: url(img/character-top-return.png);
+  animation: walk-2 0.8s steps(8) forwards;
+}
+
+/* line 161, style.scss */
+#center-to-right:checked ~ .stage {
+  background-position-x: right;
+}
+/* line 223, style.scss */
+#center-to-right:checked ~ .stage .character {
+  background-image: url(img/character-right.png);
+  animation: walk-1 0.8s steps(8) forwards;
+}
+
+/* line 161, style.scss */
+#right-to-center:checked ~ .stage {
+  background-position-x: center;
+}
+/* line 230, style.scss */
+#right-to-center:checked ~ .stage .character {
+  background-image: url(img/character-right-return.png);
+  animation: walk-2 0.8s steps(8) forwards;
+}
+
+/* line 188, style.scss */
+#right-to-top:checked ~ .stage,
+#top-to-right:checked ~ .stage {
+  background-position: right top;
+}
+
+/* line 188, style.scss */
+#right-to-bottom:checked ~ .stage,
+#bottom-to-right:checked ~ .stage {
+  background-position: right bottom;
+}
+
+/* line 188, style.scss */
+#right-top-to-top-center:checked ~ .stage {
+  background-position: center top;
+}
+
+/* line 188, style.scss */
+#right-bottom-to-bottom-center:checked ~ .stage {
+  background-position: center bottom;
+}
+
+/* line 188, style.scss */
+#right-top-to-right-center:checked ~ .stage,
+#right-bottom-to-right-center:checked ~ .stage {
+  background-position: right center;
+}
+
+/* line 255, style.scss */
+#right-to-top:checked ~ .stage .character {
+  background-image: url(img/character-top.png);
+  animation: walk-3 0.8s steps(8) forwards;
+}
+
+/* line 261, style.scss */
+#right-top-to-top-center:checked ~ .stage .character {
+  background-image: url(img/character-right-return.png);
+  animation: walk-4 0.8s steps(8) forwards;
+}
+
+/* line 268, style.scss */
+#right-to-bottom:checked ~ .stage .character {
+  background-image: url(img/character-bottom.png);
+  animation: walk-5 0.8s steps(8) forwards;
+}
+
+/* line 274, style.scss */
+#right-top-to-right-center:checked ~ .stage .character {
+  background-image: url(img/character-top-return.png);
+  animation: walk-6 0.8s steps(8) forwards;
+}
+
+/* line 280, style.scss */
+#right-bottom-to-right-center:checked ~ .stage .character {
+  background-image: url(img/character-bottom-return.png);
+  animation: walk-6 0.8s steps(8) forwards;
+}
+
+/* line 287, style.scss */
+#right-bottom-to-bottom-center:checked ~ .stage .character {
+  background-image: url(img/character-right-return.png);
+  animation: walk-7 0.8s steps(8) forwards;
+}
+
+/* line 294, style.scss */
+#top-to-right:checked ~ .stage .character,
+#bottom-to-right:checked ~ .stage .character {
+  background-image: url(img/character-right.png);
+  animation: walk-8 0.8s steps(8) forwards;
+}
+
+/* line 161, style.scss */
+#center-to-bottom:checked ~ .stage {
+  background-position-y: bottom;
+}
+/* line 223, style.scss */
+#center-to-bottom:checked ~ .stage .character {
+  background-image: url(img/character-bottom.png);
+  animation: walk-1 0.8s steps(8) forwards;
+}
+
+/* line 161, style.scss */
+#bottom-to-center:checked ~ .stage {
+  background-position-y: center;
+}
+/* line 230, style.scss */
+#bottom-to-center:checked ~ .stage .character {
+  background-image: url(img/character-bottom-return.png);
+  animation: walk-2 0.8s steps(8) forwards;
+}
+
+/* line 161, style.scss */
+#center-to-left:checked ~ .stage {
+  background-position-x: left;
+}
+/* line 223, style.scss */
+#center-to-left:checked ~ .stage .character {
+  background-image: url(img/character-left.png);
+  animation: walk-1 0.8s steps(8) forwards;
+}
+
+/* line 161, style.scss */
+#left-to-center:checked ~ .stage {
+  background-position-x: center;
+}
+/* line 230, style.scss */
+#left-to-center:checked ~ .stage .character {
+  background-image: url(img/character-left-return.png);
+  animation: walk-2 0.8s steps(8) forwards;
+}
+
+/* line 188, style.scss */
+#left-to-top:checked ~ .stage,
+#top-to-left:checked ~ .stage {
+  background-position: left top;
+}
+
+/* line 188, style.scss */
+#left-to-bottom:checked ~ .stage,
+#bottom-to-left:checked ~ .stage {
+  background-position: left bottom;
+}
+
+/* line 188, style.scss */
+#left-top-to-top-center:checked ~ .stage {
+  background-position: center top;
+}
+
+/* line 188, style.scss */
+#left-bottom-to-bottom-center:checked ~ .stage {
+  background-position: center bottom;
+}
+
+/* line 188, style.scss */
+#left-top-to-left-center:checked ~ .stage,
+#left-bottom-to-left-center:checked ~ .stage {
+  background-position: left center;
+}
+
+/* line 255, style.scss */
+#left-to-top:checked ~ .stage .character {
+  background-image: url(img/character-top.png);
+  animation: walk-3 0.8s steps(8) forwards;
+}
+
+/* line 261, style.scss */
+#left-top-to-top-center:checked ~ .stage .character {
+  background-image: url(img/character-left-return.png);
+  animation: walk-4 0.8s steps(8) forwards;
+}
+
+/* line 268, style.scss */
+#left-to-bottom:checked ~ .stage .character {
+  background-image: url(img/character-bottom.png);
+  animation: walk-5 0.8s steps(8) forwards;
+}
+
+/* line 274, style.scss */
+#left-top-to-left-center:checked ~ .stage .character {
+  background-image: url(img/character-top-return.png);
+  animation: walk-6 0.8s steps(8) forwards;
+}
+
+/* line 280, style.scss */
+#left-bottom-to-left-center:checked ~ .stage .character {
+  background-image: url(img/character-bottom-return.png);
+  animation: walk-6 0.8s steps(8) forwards;
+}
+
+/* line 287, style.scss */
+#left-bottom-to-bottom-center:checked ~ .stage .character {
+  background-image: url(img/character-left-return.png);
+  animation: walk-7 0.8s steps(8) forwards;
+}
+
+/* line 294, style.scss */
+#top-to-left:checked ~ .stage .character,
+#bottom-to-left:checked ~ .stage .character {
+  background-image: url(img/character-left.png);
+  animation: walk-8 0.8s steps(8) forwards;
+}

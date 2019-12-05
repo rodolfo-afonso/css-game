@@ -1,0 +1,300 @@
+body {
+    background-color: #333333;
+}
+
+%display-none {
+    display: none;
+}
+%display-block {
+    display: block;
+}
+%timeStage {
+    transition: all 2s;
+}
+%center {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    top: 0;
+    width: 100%;
+}
+%margin-auto {
+    margin: auto;
+}
+
+.wrapper {
+    @extend %margin-auto;
+    border: 1px solid #FFFFFF;
+    bottom: 0;
+    height: 600px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 600px;
+}
+.anchor {
+    @extend %display-none;
+}
+.intro {
+    .ballon {
+        background-color: #FFFFFF;
+        border-radius: 4px;
+        display: none;
+        padding: 20px;
+        position: relative;
+        width: 200px;
+        .text {
+            color: #333333;
+        }
+        label {
+            background-color: #BA0000;
+            border-radius: 50%;
+            bottom: -15px;
+            color: #FFFFFF;
+            cursor: pointer;
+            padding: 8px;
+            position: absolute;
+            right: -15px;
+        }
+        &.-end {
+            label {
+                background-color: green;
+            }
+        }
+    }   
+}
+
+.stage,
+.intro {
+    @extend %display-none;
+}
+
+.character {
+    background: url(img/character-bottom.png) left top no-repeat;
+    height: 74px;
+    width: 74px;
+}
+
+$main: (
+    intro: intro,
+    stage: stage
+);
+
+@each $id, $class in $main {
+    #anchor-#{$id} {
+        &:checked {
+            ~ .#{$class} {
+                @extend %center;
+            }
+        }
+    }
+}
+
+.stage {
+    background: url(img/scenery.jpg) center center;
+    position: relative;
+    transition: all 1.2s;
+    .control {
+        color: #FFFFFF;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        position: absolute;
+        text-align: center;
+        width: 20px;
+        &.-top {
+            left: 0;
+            @extend %margin-auto;
+            right: 0;
+            top: 20px;
+        }
+        &.-right {
+            right: 20px;
+        }
+        &.-bottom {
+            bottom: 20px;
+            left: 0;
+            @extend %margin-auto;
+            right: 0;
+        }
+        &.-left {
+            left: 20px;
+        }
+    }
+    .controllers {    
+        .control {
+            background-color: red;
+        }
+        &[level="2"] {
+            @extend %display-none;
+        }
+        &[level="3"] {
+            @extend %display-none;
+        }
+    }
+}
+
+:checked {
+    + .ballon {
+        display: block;
+    }
+}
+
+
+@for $i from 1 through 8 {
+    @keyframes walk-#{$i} {
+        0% {
+            background-position-x: 0;
+        }
+        99% {
+             background-position-x: -592px;
+        }
+    }
+}
+
+@mixin controls-checked-1($position1, $position2, $stateLevel1) {
+    &:checked {
+        ~ .stage {
+            @if ($position1 == "right") or ($position1 == "left") {
+                background-position-x: $position2;
+            } @else {
+                background-position-y: $position2;
+            }
+            @if($stateLevel1 == none) {
+                [level="1"] {
+                    @extend %display-none;
+                }
+                .#{$position1}[level="2"] {
+                    @extend %display-block;
+                }
+            } @else {
+                .#{$position1}[level="2"] {
+                    @extend %display-none;
+                }
+                [level="1"] {
+                    @extend %display-block;
+                }
+            }
+        }
+    }
+}
+
+@mixin controls-checked-2($positionX, $positionY, $n1, $n2, $n3, $diagonal) {
+    &:checked {
+        ~ .stage {
+            background-position: $positionX $positionY;
+            [level="#{$n1}"],
+            [level="#{$n2}"] {
+                @extend %display-none;
+            }
+            @if($diagonal == true) {            
+                .diagonal-#{$positionX}-#{$positionY}[level="#{$n3}"] {
+                    @extend %display-block;
+                }
+            } @else {
+                @if($positionX == left) or ($positionX == right) {
+                    .#{$positionX}[level="#{$n3}"] {
+                        @extend %display-block;
+                    }
+                } @else {                
+                    .#{$positionY}[level="#{$n3}"] {
+                        @extend %display-block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+$positions: (
+    top: top,
+    right: right,
+    bottom: bottom,
+    left: left
+);
+
+@each $position, $value in $positions {
+    #center-to-#{$position} {
+        @include controls-checked-1($position, $position, none);
+        &:checked ~ .stage .character {
+            background-image: url(img/character-#{$position}.png);
+            animation: walk-1 .8s steps(8) forwards;
+        }
+    }
+    ##{$position}-to-center {
+        @include controls-checked-1($position, center, block);
+        &:checked ~ .stage .character {
+            background-image: url(img/character-#{$position}-return.png);
+            animation: walk-2 .8s steps(8) forwards;
+        }
+    }
+
+    @if ($position == "right") or ($position == "left") {
+        ##{$position}-to-top,
+        #top-to-#{$position} {
+            @include controls-checked-2($position, top, 1, 2, 3, true);
+        }
+        ##{$position}-to-bottom,
+        #bottom-to-#{$position} {
+            @include controls-checked-2($position, bottom, 1, 2, 3, true);
+        }
+        ##{$position}-top-to-top-center {
+            @include controls-checked-2(center, top, 1, 3, 2, false);
+        }
+        ##{$position}-bottom-to-bottom-center {
+            @include controls-checked-2(center, bottom, 1, 3, 2, false);
+        }
+        ##{$position}-top-to-#{$position}-center,
+        ##{$position}-bottom-to-#{$position}-center {
+            @include controls-checked-2($position, center, 1, 3, 2, false);
+        }
+        ##{$position}-to-top {
+            &:checked ~ .stage .character {
+                background-image: url(img/character-top.png);
+                animation: walk-3 .8s steps(8) forwards;
+            }
+        }
+        ##{$position}-top-to-top-center {
+            &:checked ~ .stage .character {
+                background-image: url(img/character-#{$position}-return.png);
+                animation: walk-4 .8s steps(8) forwards;
+            }
+        }
+        ##{$position}-to-bottom {
+            &:checked ~ .stage .character {
+                background-image: url(img/character-bottom.png);
+                animation: walk-5 .8s steps(8) forwards;
+            }
+        }
+        ##{$position}-top-to-#{$position}-center {
+            &:checked ~ .stage .character {
+                background-image: url(img/character-top-return.png);
+                animation: walk-6 .8s steps(8) forwards;
+            }
+        }
+        ##{$position}-bottom-to-#{$position}-center {
+            &:checked ~ .stage .character {
+                background-image: url(img/character-bottom-return.png);
+                animation: walk-6 .8s steps(8) forwards;
+            }
+        }
+
+        ##{$position}-bottom-to-bottom-center {
+            &:checked ~ .stage .character {
+                background-image: url(img/character-#{$position}-return.png);
+                animation: walk-7 .8s steps(8) forwards;
+            }
+        }
+        #top-to-#{$position},
+        #bottom-to-#{$position} {
+            &:checked ~ .stage .character {
+                background-image: url(img/character-#{$position}.png);
+                animation: walk-8 .8s steps(8) forwards;
+            }
+        }
+    }
+}

@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<input class="anchor" id="anchor-intro" type="radio" name="main" checked="checked">
+			<input class="anchor" id="anchor-stage" type="radio" name="main">
+
+			<input class="anchor" type="radio" level="1" id="center-to-top" name="level-y">
+			<input class="anchor" type="radio" level="1" id="center-to-bottom" name="level-y">
+
+			<input class="anchor" type="radio" level="2" id="top-to-center" name="level-y">
+			<input class="anchor" type="radio" level="2" id="bottom-to-center" name="level-y">
+
+
+
+			<input class="anchor" type="radio" level="1" id="center-to-right" name="level-x">
+			<input class="anchor" type="radio" level="1" id="center-to-left" name="level-x">
+
+			<input class="anchor" type="radio" level="2" id="right-to-center" name="level-x">
+			<input class="anchor" type="radio" level="2" id="left-to-center" name="level-x">
+
+
+
+			<div class="intro" id="intro">
+				<input class="anchor" id="control-ballon-1" type="radio" name="intro" checked="checked">
+				<div class="ballon">
+					<div class="text">Um texto qualquer</div>
+					<label for="control-ballon-2"> >> </label>
+				</div>
+
+				<input class="anchor" id="control-ballon-2" type="radio" name="intro">
+				<div class="ballon">
+					<div class="text">Outro texto qualquer</div>
+					<label for="control-ballon-3"> >> </label>
+				</div>
+
+				<input class="anchor" id="control-ballon-3" type="radio" name="intro">
+				<div class="ballon -end">
+					<div class="text">Fim!</div>
+					<label for="anchor-stage"> x </label>
+				</div>
+			</div>
+
+
+			
+			<div class="stage">
+				<div class="controller -top">
+					<label class="control" level="1" for="center-to-top">T</label>
+					<label class="control" level="2" for="bottom-to-center">T</label>
+				</div>
+				
+				<div class="controller -bottom">	
+					<label class="control" level="1" for="center-to-bottom">B</label>
+					<label class="control" level="2" for="top-to-center">B</label>
+
+				</div>
+
+				<div class="controller -right">
+					<label class="control" level="1" for="center-to-right">R</label>
+					<label class="control" level="2" for="left-to-center">R</label>
+				</div>
+				
+				<div class="controller -left">
+					<label class="control" level="1" for="center-to-left">L</label>
+					<label class="control" level="2" for="right-to-center">L</label>
+				</div>
+
+				<div class="character"></div>
+			</div>
+		</div>
+	</body>
+</html>

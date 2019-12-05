@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<input class="anchor" id="anchor-intro" type="radio" name="main" checked="checked">
+			<input class="anchor" id="anchor-stage" type="radio" name="main">
+
+			<input class="anchor" type="radio" level="1" id="center-to-top" name="controllers">
+			<input class="anchor" type="radio" level="1" id="center-to-bottom" name="controllers">
+			<input class="anchor" type="radio" level="1" id="center-to-right" name="controllers">
+			<input class="anchor" type="radio" level="1" id="center-to-left" name="controllers">
+			<input class="anchor" type="radio" level="2" id="top-to-center" name="controllers">
+			<input class="anchor" type="radio" level="2" id="top-to-right" name="controllers">
+			<input class="anchor" type="radio" level="2" id="top-to-left" name="controllers">
+			<input class="anchor" type="radio" level="2" id="bottom-to-center" name="controllers">
+			<input class="anchor" type="radio" level="2" id="bottom-to-right" name="controllers">
+			<input class="anchor" type="radio" level="2" id="bottom-to-left" name="controllers">
+			<input class="anchor" type="radio" level="2" id="left-to-top" name="controllers">
+			<input class="anchor" type="radio" level="2" id="left-to-center" name="controllers">
+			<input class="anchor" type="radio" level="2" id="left-to-bottom" name="controllers">
+			<input class="anchor" type="radio" level="2" id="right-to-top" name="controllers">
+			<input class="anchor" type="radio" level="2" id="right-to-center" name="controllers">
+			<input class="anchor" type="radio" level="2" id="right-to-bottom" name="controllers">
+			<input class="anchor" type="radio" level="3" id="left-top-to-top-center" name="controllers">
+			<input class="anchor" type="radio" level="3" id="left-top-to-left-center" name="controllers">
+			<input class="anchor" type="radio" level="3" id="right-top-to-top-center" name="controllers">
+			<input class="anchor" type="radio" level="3" id="right-top-to-right-center" name="controllers">
+			<input class="anchor" type="radio" level="3" id="left-bottom-to-bottom-center" name="controllers">
+			<input class="anchor" type="radio" level="3" id="left-bottom-to-left-center" name="controllers">
+			<input class="anchor" type="radio" level="3" id="right-bottom-to-bottom-center" name="controllers">
+			<input class="anchor" type="radio" level="3" id="right-bottom-to-right-center" name="controllers">
+
+			<div class="intro" id="intro">
+				<input class="anchor" id="control-ballon-1" type="radio" name="intro" checked="checked">
+				<div class="ballon">
+					<div class="text">Um texto qualquer</div>
+					<label for="control-ballon-2"> >> </label>
+				</div>
+
+				<input class="anchor" id="control-ballon-2" type="radio" name="intro">
+				<div class="ballon">
+					<div class="text">Outro texto qualquer</div>
+					<label for="control-ballon-3"> >> </label>
+				</div>
+
+				<input class="anchor" id="control-ballon-3" type="radio" name="intro">
+				<div class="ballon -end">
+					<div class="text">Fim!</div>
+					<label for="anchor-stage"> x </label>
+				</div>
+			</div>
+
+
+
+
+
+		
+
+
+
+			
+			<div class="stage">
+				<div class="controllers center" level="1">				
+					<label class="control -top" for="center-to-top">T</label>
+					<label class="control -bottom" for="center-to-bottom">B</label>
+					<label class="control -right" for="center-to-right">R</label>
+					<label class="control -left" for="center-to-left">L</label>
+				</div>
+				<div class="controllers top" level="2">				
+					<label class="control -bottom" for="top-to-center">B</label>
+					<label class="control -right" for="top-to-right">R</label>
+					<label class="control -left" for="top-to-left">L</label>
+				</div>
+
+				<div class="controllers bottom" level="2">				
+					<label class="control -top" for="bottom-to-center">B</label>
+					<label class="control -right" for="bottom-to-right">R</label>
+					<label class="control -left" for="bottom-to-left">L</label>
+				</div>
+
+				<div class="controllers left" level="2">				
+					<label class="control -top" for="left-to-top">T</label>
+					<label class="control -right" for="left-to-center">R</label>
+					<label class="control -bottom" for="left-to-bottom">B</label>
+				</div>
+
+				<div class="controllers right" level="2">				
+					<label class="control -top" for="right-to-top">T</label>
+					<label class="control -left" for="right-to-center">L</label>
+					<label class="control -bottom" for="right-to-bottom">B</label>
+				</div>
+
+				<div class="controllers diagonal-left-top" level="3">				
+					<label class="control -right" for="left-top-to-top-center">R</label>
+					<label class="control -bottom" for="left-top-to-left-center">B</label>
+				</div>
+
+				<div class="controllers diagonal-right-top" level="3">				
+					<label class="control -left" for="right-top-to-top-center">R</label>
+					<label class="control -bottom" for="right-top-to-right-center">B</label>
+				</div>
+
+				<div class="controllers diagonal-left-bottom" level="3">				
+					<label class="control -right" for="left-bottom-to-bottom-center">L</label>
+					<label class="control -top" for="left-bottom-to-left-center">T</label>
+				</div>
+
+				<div class="controllers diagonal-right-bottom" level="3">				
+					<label class="control -left" for="right-bottom-to-bottom-center">L</label>
+					<label class="control -top" for="right-bottom-to-right-center">T</label>
+				</div>
+
+				<div class="character"></div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,242 @@
+/* line 1, style.scss */
+body {
+  background-color: #333333;
+}
+
+/* line 5, style.scss */
+.anchor, .stage,
+.intro {
+  display: none;
+}
+
+/* line 15, style.scss */
+#anchor-intro:checked ~ .intro, #anchor-stage:checked ~ .stage {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  top: 0;
+  width: 100%;
+}
+
+/* line 24, style.scss */
+.wrapper {
+  border: 1px solid #FFFFFF;
+  bottom: 0;
+  height: 600px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 600px;
+}
+
+/* line 39, style.scss */
+.intro .ballon {
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  display: none;
+  padding: 20px;
+  position: relative;
+  width: 200px;
+}
+/* line 46, style.scss */
+.intro .ballon .text {
+  color: #333333;
+}
+/* line 49, style.scss */
+.intro .ballon label {
+  background-color: #BA0000;
+  border-radius: 50%;
+  bottom: -15px;
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 8px;
+  position: absolute;
+  right: -15px;
+}
+/* line 60, style.scss */
+.intro .ballon.-end label {
+  background-color: green;
+}
+
+/* line 72, style.scss */
+.character {
+  background: url(img/character-bottom.png) left top no-repeat;
+  height: 74px;
+  width: 74px;
+}
+
+@keyframes play-1 {
+  100% {
+    background-position-x: -592px;
+  }
+}
+@keyframes play-2 {
+  100% {
+    background-position-x: -592px;
+  }
+}
+/* line 102, style.scss */
+.stage {
+  background: url(img/scenery.jpg) center center;
+  position: relative;
+}
+/* line 105, style.scss */
+.stage .controller {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}
+/* line 109, style.scss */
+.stage .controller.-top {
+  left: 0;
+  margin: auto;
+  right: 0;
+  top: 20px;
+}
+/* line 115, style.scss */
+.stage .controller.-right {
+  right: 20px;
+}
+/* line 118, style.scss */
+.stage .controller.-bottom {
+  bottom: 20px;
+  left: 0;
+  margin: auto;
+  right: 0;
+}
+/* line 124, style.scss */
+.stage .controller.-left {
+  left: 20px;
+}
+/* line 127, style.scss */
+.stage .controller .control {
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 10px;
+}
+/* line 132, style.scss */
+.stage .controller [level="1"] {
+  background-color: #BA0000;
+}
+/* line 135, style.scss */
+.stage .controller [level="2"] {
+  background-color: green;
+  display: none;
+}
+/* line 139, style.scss */
+.stage .controller [level="3"] {
+  background-color: blue;
+  display: none;
+}
+
+/* line 154, style.scss */
+:checked + .ballon {
+  display: block;
+}
+
+/* line 162, style.scss */
+#center-to-top:checked ~ .stage {
+  background-position-y: top;
+}
+/* line 163, style.scss */
+#center-to-top:checked ~ .stage [for="center-to-top"] {
+  display: none;
+}
+/* line 168, style.scss */
+#center-to-top:checked ~ .stage [for="center-to-bottom"] {
+  display: none;
+}
+/* line 171, style.scss */
+#center-to-top:checked ~ .stage [for="top-to-center"] {
+  display: block;
+}
+
+/* line 216, style.scss */
+#top-to-center:checked ~ .stage {
+  background-position-y: center;
+}
+/* line 217, style.scss */
+#top-to-center:checked ~ .stage [for="top-to-center"] {
+  display: none;
+}
+
+/* line 162, style.scss */
+#center-to-right:checked ~ .stage {
+  background-position-x: right;
+}
+/* line 163, style.scss */
+#center-to-right:checked ~ .stage [for="center-to-right"] {
+  display: none;
+}
+/* line 190, style.scss */
+#center-to-right:checked ~ .stage [for="center-to-left"] {
+  display: none;
+}
+/* line 193, style.scss */
+#center-to-right:checked ~ .stage [for="right-to-center"] {
+  display: block;
+}
+
+/* line 216, style.scss */
+#right-to-center:checked ~ .stage {
+  background-position-x: center;
+}
+/* line 217, style.scss */
+#right-to-center:checked ~ .stage [for="right-to-center"] {
+  display: none;
+}
+
+/* line 162, style.scss */
+#center-to-bottom:checked ~ .stage {
+  background-position-y: bottom;
+}
+/* line 163, style.scss */
+#center-to-bottom:checked ~ .stage [for="center-to-bottom"] {
+  display: none;
+}
+/* line 179, style.scss */
+#center-to-bottom:checked ~ .stage [for="center-to-top"] {
+  display: none;
+}
+/* line 182, style.scss */
+#center-to-bottom:checked ~ .stage [for="bottom-to-center"] {
+  display: block;
+}
+
+/* line 216, style.scss */
+#bottom-to-center:checked ~ .stage {
+  background-position-y: center;
+}
+/* line 217, style.scss */
+#bottom-to-center:checked ~ .stage [for="bottom-to-center"] {
+  display: none;
+}
+
+/* line 162, style.scss */
+#center-to-left:checked ~ .stage {
+  background-position-x: left;
+}
+/* line 163, style.scss */
+#center-to-left:checked ~ .stage [for="center-to-left"] {
+  display: none;
+}
+/* line 201, style.scss */
+#center-to-left:checked ~ .stage [for="center-to-right"] {
+  display: none;
+}
+/* line 204, style.scss */
+#center-to-left:checked ~ .stage [for="left-to-center"] {
+  display: block;
+}
+
+/* line 216, style.scss */
+#left-to-center:checked ~ .stage {
+  background-position-x: center;
+}
+/* line 217, style.scss */
+#left-to-center:checked ~ .stage [for="left-to-center"] {
+  display: none;
+}
